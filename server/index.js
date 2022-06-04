@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 // Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "hello from api" });
-});
+// app.get("/api", (req, res) => {
+//   res.json({ message: "hello from api" });
+// });
 
 // All other GET requests not handled before will return our React app
 app.get("*", (req, res) => {
