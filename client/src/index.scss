@@ -1,0 +1,265 @@
+@use "sass:list";
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+
+$color-white: #fff;
+$color-green: rgb(96, 145, 96);
+$color-dark-green: rgb(19, 53, 20);
+$shadow: 7px 5px 12px rgb(107, 103, 103);
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2014/12/30/08/11/parquet-583691_960_720.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+h1 {
+  text-align: center;
+  font-family: "Henny Penny", cursive;
+  color: $color-dark-green;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  margin-top: 4rem;
+  text-shadow: 9px 3px 5px $color-white;
+  z-index: 100;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nav */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  background-color: $color-green;
+  padding: 1.2rem 0;
+  z-index: 200;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  & a {
+    font-size: 1.3rem;
+    color: $color-white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      color: $color-dark-green;
+      font-weight: bold;
+    }
+  }
+}
+
+.nav-wrapper label,
+#nav-closed {
+  display: none;
+}
+
+/* homepage */
+#home {
+  min-height: 64vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fire {
+  position: relative;
+}
+.animation {
+  margin-bottom: 50px;
+  text-align: center;
+  z-index: 20;
+}
+
+.log {
+  position: absolute;
+  width: 8em;
+  height: 1.2em;
+  background-color: #5f4b3d;
+  border: 1px solid rgba(71, 31, 31, 0.407);
+  border-radius: 5px;
+}
+.log-left {
+  transform: rotateZ(15deg);
+  margin: -60px 0px 0px -60px;
+}
+.log-right {
+  transform: rotateZ(-15deg);
+  margin: -60px 0px 0px -60px;
+}
+
+/* newsletter */
+section {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(255, 255, 162);
+  margin: 20px;
+  box-shadow: $shadow;
+  cursor: pointer;
+  position: relative;
+
+  & h2 {
+    color: rgb(96, 90, 90);
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    letter-spacing: 2.5px;
+    margin-top: 120px;
+
+    & a {
+      text-decoration: none;
+      color: rgb(96, 90, 90);
+      cursor: pointer;
+
+      &:hover {
+        color: #ff9933;
+      }
+    }
+  }
+}
+
+.pin {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/12/14/10/pushpin-147918_960_720.png");
+  background-size: cover;
+  height: 65px;
+  width: 70px;
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  z-index: 10;
+}
+
+#newsletter,
+#activities {
+  min-height: 64vh;
+}
+/* calendar */
+
+.description {
+  min-width: 300px;
+  margin-top: 20px;
+  background-color: rgb(48, 50, 52);
+  box-shadow: $shadow;
+  border: 9px solid $color-white;
+}
+
+ul {
+  padding-top: 12px;
+  color: $color-white;
+}
+.description > ul > li {
+  padding-right: 20px;
+  text-align: left;
+}
+
+button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day {
+  background-color: rgb(96, 145, 96, 0.8);
+  border-radius: 50%;
+}
+.calendar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-container {
+  margin: 2rem 0;
+}
+
+button.react-calendar__navigation__label {
+  font-size: 1.2rem;
+  color: green;
+}
+
+div.calendar-container > div {
+  border: 3px solid $color-green;
+
+  border-radius: 7px;
+  box-shadow: $shadow;
+}
+.event {
+  font-family: "Henny Penny", cursive;
+  letter-spacing: 2px;
+  color: rgb(114, 193, 87);
+  text-align: center;
+  margin-bottom: -1rem;
+}
+footer {
+  background-color: $color-green;
+  padding: 20px 0;
+  text-align: center;
+  color: $color-white;
+  & a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $color-white;
+    &:hover {
+      color: $color-dark-green;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-items {
+    display: none;
+  }
+  .nav-items a {
+    display: block;
+    width: 100%;
+  }
+  .nav-wrapper label {
+    display: inline-block;
+    color: $color-white;
+    font-size: 1.2em;
+    padding: 0.8em;
+  }
+
+  .nav-wrapper input:checked ~ .nav-items {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .nav-items {
+    flex-direction: row;
+    & a {
+      font-size: 1.5rem;
+    }
+  }
+
+  main {
+    flex-direction: row;
+  }
+  section {
+    margin-left: 2rem;
+  }
+
+  footer {
+    width: 100%;
+    text-align: center;
+    color: $color-white;
+  }
+  #home .animation {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
