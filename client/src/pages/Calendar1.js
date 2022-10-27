@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 
 import { useEffect, useRef } from "react";
 import Lottie from "lottie-web";
-import cat from "./images/animations/lf30_editor_r2ia1abk.json";
+import cat from "../images/animations/lf30_editor_r2ia1abk.json";
 
 // import './App.css';
 

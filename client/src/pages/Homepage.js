@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Lottie from "lottie-web";
-import fire from "./images/animations/74216-animated-flames.json";
+import fire from "../images/animations/74216-animated-flames.json";
 
 const Homepage = () => {
   const container = useRef();
