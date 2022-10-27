@@ -38,6 +38,7 @@ const Calendar1 = () => {
           <li>3 - Ice cream eating competition</li>
           <li>17 - Water ballon fight</li>
           <li>25 - Sock swapping event</li>
+          <li>Troop event</li>
         </ul>
       </div>
       <div className="animation" ref={container}></div>
